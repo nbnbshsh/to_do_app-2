@@ -1,0 +1,6 @@
+<h2>CREATE　TO DO</h2>
+
+<%= form_with url: tasks_path,local: true do |f|%>
+  <%= f.text_field :title %>
+  <%= f.submit "作成" %>
+<% end %>
