@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   def index
+    @tasks=Task.all.order(created_at: :desc)
   end
 
   def new
@@ -12,6 +13,12 @@ class TasksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @task=Task.find(params[:id])
+    @task.destroy
+    render :index
   end
 
   private
