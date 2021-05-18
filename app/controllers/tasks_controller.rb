@@ -18,7 +18,7 @@ class TasksController < ApplicationController
   def destroy
     @task=Task.find(params[:id])
     @task.destroy
-    render :index
+    redirect_to root_path
   end
 
   private
