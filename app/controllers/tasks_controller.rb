@@ -17,6 +17,11 @@ class TasksController < ApplicationController
 
   def show
     @task=Task.find(params[:id])
+    @detail=Detail.new(details_params)
+    if @detail.save
+      redirect_to task_path
+    end
+    @detail_memo=Detail.where(task_id: params[:task_id])
   end
 
   def destroy
@@ -29,6 +34,10 @@ class TasksController < ApplicationController
 
   def task_params
     params.permit(:task)
+  end
+
+  def details_params
+    params.permit(:memo).merge(task_id: params[:id])
   end
 
 end

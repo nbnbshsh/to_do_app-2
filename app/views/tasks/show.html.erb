@@ -1,5 +1,12 @@
 <%= @task.task %>
-<%= form_with do |f|%>
-<%= f.label :日付 %>
-<%= f.text_field :created_at, :class => 'datepicker' %>
+<%= form_with local: true do |f|%>
+<%# <%= f.label :日付 %>
+<%# <%= f.text_field :deadline, :class => 'datepicker' %>
+<%if @detail_memo != nil%>
+<%= @detail.memo %>
+<%end%>
+<%= f.label :詳細 %>
+<%= f.text_field :memom %>
+<%= f.submit "作成" %>
+
 <% end %>
