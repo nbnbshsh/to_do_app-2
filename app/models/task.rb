@@ -1,5 +1,4 @@
 class Task < ApplicationRecord
   validates :task,presence: true
-  
-  has_many :details
+  has_many :reviews,dependent: :destroy 
 end

@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def index
     @tasks=Task.all.order(created_at: :desc)
+    @review=Review.new
   end
 
   def new
@@ -27,8 +28,5 @@ class TasksController < ApplicationController
     params.permit(:task)
   end
 
-  def details_params
-    params.permit(:memo).merge(task_id: params[:id])
-  end
-
+  
 end
