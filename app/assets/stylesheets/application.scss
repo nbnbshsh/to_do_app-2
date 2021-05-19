@@ -14,4 +14,8 @@
  *= require_self
  *= require bootstrap-datetimepicker
  */
+@import "bluma";
 
+body{
+  min-height: 100vh;
+}

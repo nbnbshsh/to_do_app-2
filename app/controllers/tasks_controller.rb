@@ -15,15 +15,6 @@ class TasksController < ApplicationController
     end
   end
 
-  def show
-    @task=Task.find(params[:id])
-    @detail=Detail.new(details_params)
-    if @detail.save
-      redirect_to task_path
-    end
-    @detail_memo=Detail.where(task_id: params[:task_id])
-  end
-
   def destroy
     @task=Task.find(params[:id])
     @task.destroy
