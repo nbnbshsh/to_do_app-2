@@ -1,4 +1,5 @@
-const stars = document.querySelector(".ratings").children;
+function post (){
+  const stars = document.querySelector(".ratings").children;
 const ratingValue = document.getElementById("rating-value");
 
 let index;
@@ -16,3 +17,7 @@ for(let i=0;i<stars.length; i++){
   }
   })
 }
+}
+
+window.addEventListener('load', post);
+
